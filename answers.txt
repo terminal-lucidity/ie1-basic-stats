@@ -1,12 +1,22 @@
 1. In the basic-stats folder in the main (previously called master) branch, how many commits
 does the README.md file have?
 
+It has 16 commits 
+
 2. For the README.md file, what is the set of the different authors of its commits?
+
+rjust, brunyuriy, DeveloperTommy
 
 3. For the README.md file, what is the hash of the commit that mentions the ant build tool?
 
+c2111cc
+
 4. How many total commits have been made in the repository across all branches?
 
+52
+
 5. List the files modified in the commit with the hash 01da475.
+src/Models/Model.java, src/Models/Numbers.java, src/Views/AddNumView.java, src/Views/MeanView.java, src/Views/MedianView.java, src/Views/ModeView.java, src/Views/NumbersView.java, src/Views/ResetView.java
 
 6. What is the most recent commit in the main branch? 
+Updated README.md 
