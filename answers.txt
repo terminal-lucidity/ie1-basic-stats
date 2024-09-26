@@ -1,0 +1,12 @@
+1. In the basic-stats folder in the main (previously called master) branch, how many commits
+does the README.md file have?
+
+2. For the README.md file, what is the set of the different authors of its commits?
+
+3. For the README.md file, what is the hash of the commit that mentions the ant build tool?
+
+4. How many total commits have been made in the repository across all branches?
+
+5. List the files modified in the commit with the hash 01da475.
+
+6. What is the most recent commit in the main branch? 
