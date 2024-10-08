@@ -1,3 +1,8 @@
+Group: Bret Hackenson, Anmol Mago
+GitHub: https://github.com/terminal-lucidity/ie1-basic-stats
+
+Querying Questions:
+
 1. In the basic-stats folder in the main (previously called master) branch, how many commits
 does the README.md file have?
 
@@ -19,4 +24,32 @@ c2111cc
 src/Models/Model.java, src/Models/Numbers.java, src/Views/AddNumView.java, src/Views/MeanView.java, src/Views/MedianView.java, src/Views/ModeView.java, src/Views/NumbersView.java, src/Views/ResetView.java
 
 6. What is the most recent commit in the main branch? 
-Updated README.md 
+Updated README.md
+
+
+Questions:
+
+1. See above
+
+2. Before implementing the code, first clone the remote repository by calling "git clone <repo_name>.git".
+"Origin" is automatically assigned to the cloned repository, but it can be manually configured with the command "git remote add origin <repo_url>.
+It is recommended to create a new branch when developing a new feature. In this case, it would make sense to create a new branch when developing a min/max View/Model/Controller.
+You can switch to a branch by writing "git checkout <branch_name>. If the branch you would like to checkout to does not exist, you can create it and immediately checkout to it by writing "git checkout -b <branch_name>.
+The name of the branch should reflect the features or other changes you are implementing in that branch. For example, when developing the min/max calculator, the branch name could be "min-max-calculation". The names should be lowercase, word-separated by hyphens, alphanumeric (only letters and numbers).
+Before editing it is also suggested to fetch the latest changes from origin by writing "git fetch origin". You can also pull (fetch and merge) these change from the main branch to your working branch by writing "git pull origin main".
+This may, however, result in merge conflicts, but frequent pulls makes it easier to merge the working branch into the main branch later on.
+Create and edit MinMaxCalculation.java, then stage these changes with the command "git add <file_name>".
+Next, before commiting, update .gitignore to exclude files that you may have created in the case that you do not want these tracked by git. For example, if you created a file with environment variables, this file should be ignored by writing the file name in the .gitignore file.
+To commit the changes, write the command "git commit -m "commit message"". The commit message, like branch names, also follow some conventions. You should start each message with a verb and keep the message short, at most about 10 words. For example: "Added min/max calculation feature" 
+The changes can be pushed to a remote branch with the same name as the local branch with the command "git push -u origin <branch_name>". -u (--set-upstream) allows the local working branch to track the remote branch, so future pushes can be made by calling "git push" without any other tags.
+This remote branch can then be merged into the main branch with a pull request.
+In the event of a merge conflict, which commonly occurs in the "git pull" command or in pull requests, git will show the conflicts in the terminal, and the user must then manaully resolve the conflicts by deciding which edits to keep from either the working branch the branch you are attempting to merge into.
+
+3. 14 commits were cherry-picked. No cherry-picked commits have the same hash as the commits in the main branch.
+Identical hashes would mean both commits share all metadata, including their parent commits. Hashes act as unique identifiers that store this metadata,
+including the relationship the commit has to other commits. Cherry-picking commits changes this relationship, so a commit's hash is changed accordingly.
+
+4. A few situations can arise when we merge a branch from which we had previously cherry picked single commits. If we had edited the cherry-picked commit in the working branch, merging the entire branch later will reintroduce this commit that was cherry-picked, and there will be a merge conflict.
+If the cherry-picked commit was edited and did not result in a conflict, there could be a case of duplicate commits. In this event, the commits can be squashed into a single commit using the "git squash" command.
+Duplicates can also arise when the cherry-picked commit was not modified in any way, however, git may be able to recognize this and skip the commit in the branch being merged that was previously cherry-picked. If git does not recognize the duplicates, the "git squash" command will work like in the above scenario.
+Cherry-picked commits will appear as often as git does not recognizing duplicates. Modified cherry-picked commits will remain in the history because they are no longer identical in content to the commit in the source branch. Meanwhile, git may recognize unmodified cherry-picked commits and skip the original commit in the source branch during the merge process.
